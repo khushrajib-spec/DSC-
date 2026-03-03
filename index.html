@@ -159,7 +159,64 @@ footer{flex-direction:column;}
 }
 </style>
 </head>
+<script>
 
+// WhatsApp Auto Message
+document.getElementById("admissionForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let mobile = document.getElementById("mobile").value;
+
+let message = `Hello DSC Didi Study Center,%0A
+Name: ${name}%0A
+Mobile: ${mobile}%0A
+I have submitted admission form.`;
+
+window.open(`https://wa.me/917070496842?text=${message}`, "_blank");
+
+alert("Form submitted! Redirecting to WhatsApp...");
+});
+
+// Razorpay Payment
+function payNow(){
+var options = {
+"key": "YOUR_RAZORPAY_KEY",
+"amount": "100000", // 1000 INR
+"currency": "INR",
+"name": "DSC Didi Study Center",
+"description": "Admission Fee",
+"handler": function (response){
+alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+}
+};
+var rzp1 = new Razorpay(options);
+rzp1.open();
+}
+
+// Load Razorpay Script
+</script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+// Download Receipt
+function downloadReceipt(){
+let content = `
+DSC DIDI STUDY CENTER
+Admission Payment Receipt
+
+Thank you for your admission.
+Contact: 7070496842
+`;
+
+let blob = new Blob([content], { type: "text/plain" });
+let link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "DSC_Receipt.txt";
+link.click();
+}
+</script>
 <body>
 
 <header>
@@ -212,16 +269,40 @@ footer{flex-direction:column;}
 </div>
 </section>
 
-.qr-box{
-margin-top:30px;
-text-align:center;
-}
-.qr-box img{
-width:250px;
-max-width:100%;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
+<section class="section" id="admission">
+<h2>Online Admission Form</h2>
+
+<form id="admissionForm">
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="tel" id="mobile" placeholder="Mobile Number" required>
+<input type="email" id="email" placeholder="Email Address">
+<textarea id="message" placeholder="Your Message"></textarea>
+
+<label>Upload Payment Screenshot:</label>
+<input type="file" id="screenshot" accept="image/*">
+
+<button type="submit">Submit Admission</button>
+</form>
+
+<div class="qr-box">
+<h3>Scan & Pay Admission Fee</h3>
+<img src="qr-payment.png" alt="Payment QR Code">
+<p>UPI: 7070496842@upi</p>
+</div>
+
+<br>
+
+<button onclick="payNow()" style="background:#ff9800;color:white;padding:12px 20px;border:none;border-radius:5px;cursor:pointer;">
+Pay Online via Razorpay
+</button>
+
+<br><br>
+
+<button onclick="downloadReceipt()" style="background:#28a745;color:white;padding:12px 20px;border:none;border-radius:5px;cursor:pointer;">
+Download Payment Receipt
+</button>
+
+</section>
 <section class="section">
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
@@ -272,4 +353,5 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 </body>
 
 </html>
+
 
