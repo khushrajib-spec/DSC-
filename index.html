@@ -159,8 +159,8 @@ footer{flex-direction:column;}
 }
 </style>
 </head>
-<script>
 
+<script>
 // WhatsApp Auto Message
 document.getElementById("admissionForm").addEventListener("submit", function(e){
 e.preventDefault();
@@ -178,27 +178,6 @@ window.open(`https://wa.me/917070496842?text=${message}`, "_blank");
 alert("Form submitted! Redirecting to WhatsApp...");
 });
 
-// Razorpay Payment
-function payNow(){
-var options = {
-  "key": "rzp_test_SMhkALJYD9B7U0", 
-  "amount": "500",       
-  "currency": "INR",
-  "name": "DSC Didi Study Center",
-  "description": "Admission Fee",
-  "handler": function (response) {
-    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-  }
-};
-var rzp1 = new Razorpay(options);
-rzp1.open();
-
-// Load Razorpay Script
-</script>
-
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-<script>
 // Download Receipt
 function downloadReceipt(){
 let content = `
@@ -216,8 +195,8 @@ link.download = "DSC_Receipt.txt";
 link.click();
 }
 </script>
-<body>
 
+<body>
 <header>
 <h1>DSC DIDI STUDY CENTER</h1>
 <nav>
@@ -236,7 +215,7 @@ link.click();
 
 <section class="section" id="about">
 <h2>About Us</h2>
-<p>DSC Didi Study Center is committed to building confident English speakers with practical learning methods, expert faculty guidance and small batch focus.</p>
+<p>DSC Didi Study Center is committed to building confident English speakers with practical learning methods, expert faculty guidance, and small batch focus.</p>
 </section>
 
 <section class="section" id="courses">
@@ -302,23 +281,24 @@ Download Payment Receipt
 </button>
 
 </section>
+
 <section class="section">
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
 <strong>How long is the course?</strong>
-<p>Course duration is 1 months.</p>
+<p>Course duration is 1 month.</p>
 </div>
-</div>
-<section> 
+<div class="faq-item">
 <strong>Are exercises available?</strong>
-<p>Yes, exercises are available of DSC DIDI STUDY CENTER itself.</p>
+<p>Yes, exercises are available at DSC Didi Study Center itself.</p>
 </div>
+</section>
 
 <section class="section" id="contact">
 <h2>Contact Us</h2>
 <p>📞 Call/WhatsApp: 7070496842</p>
 <p>📍 Address: DSC(DIDI STUDY CENTER), Indrapuri, Road no. 2A, Near North Patel Nagar, House no. 27</p>
-<iframe src="https://maps.google.com/maps?q=DSC(DIDI STUDY CENTER)House no. 27, Textbook Colony, 2A, Indrapuri Rd, Indrapuri, Keshri Nagar, Patna, Bihar 800024, India&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300"></iframe>
+<iframe src="https://maps.google.com/maps?q=DSC(DIDI%20STUDY%20CENTER)%20House%20no.%2027,%20Textbook%20Colony,%202A,%20Indrapuri%20Rd,%20Indrapuri,%20Keshri%20Nagar,%20Patna,%20Bihar%20800024,%20India&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300"></iframe>
 </section>
 
 <footer>
@@ -337,9 +317,9 @@ Download Payment Receipt
 
 <div>
 <h3>Follow Us</h3>
-<a href="#"></a>
-<a href="#"></a>
-<a href="#"></a>
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">Twitter</a>
 </div>
 </footer>
 
@@ -350,13 +330,4 @@ Download Payment Receipt
 <a href="https://wa.me/7070496842" class="whatsapp">💬</a>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
