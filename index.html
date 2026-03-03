@@ -181,8 +181,8 @@ alert("Form submitted! Redirecting to WhatsApp...");
 // Razorpay Payment
 function payNow(){
 var options = {
-"key": "YOUR_RAZORPAY_KEY",
-"amount": "100000", // 1000 INR
+"key": "YOUR_GOOGLEPAY_KEY",
+"amount": "500", // 1000 INR
 "currency": "INR",
 "name": "DSC Didi Study Center",
 "description": "Admission Fee",
@@ -190,7 +190,7 @@ var options = {
 alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
 }
 };
-var rzp1 = new Razorpay(options);
+var rzp1 = new googlepay(options);
 rzp1.open();
 }
 
@@ -353,6 +353,7 @@ Download Payment Receipt
 </body>
 
 </html>
+
 
 
 
