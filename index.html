@@ -212,24 +212,16 @@ footer{flex-direction:column;}
 </div>
 </section>
 
-<section class="section" id="admission">
-<h2>Online Admission Form</h2>
-<form>
-<input type="text" placeholder="Full Name" required>
-<input type="tel" placeholder="Mobile Number" required>
-<input type="email" placeholder="Email Address">
-<textarea placeholder="Your Message"></textarea>
-<button type="submit">Submit Admission</button>
-</form>
-
-<div class="qr-box">
-<h3>Scan & Pay Admission Fee</h3>
-<img src="qr-payment.png" alt="Payment QR Code">
-<p>UPI ID: 7070496842@upi</p>
-</div>
-
-</section>
-
+.qr-box{
+margin-top:30px;
+text-align:center;
+}
+.qr-box img{
+width:250px;
+max-width:100%;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 <section class="section">
 <h2>Frequently Asked Questions</h2>
 <div class="faq-item">
@@ -280,3 +272,4 @@ footer{flex-direction:column;}
 </body>
 
 </html>
+
