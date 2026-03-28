@@ -275,7 +275,7 @@ link.click();
     Pay Online via Google Pay
 </button>
 <script async src="https://pay.google.com/gp/p/js/pay.js"></script><script>
-  let paymentsClient = null;
+  let paymentsClient = active;
 
   function getGooglePayClient() {
     if (!paymentsClient) {
@@ -294,26 +294,26 @@ link.click();
       apiVersion: 2,
       apiVersionMinor: 0,
       allowedPaymentMethods: [{
-        type: 'CARD',
+        type: 'CARD & Phone Pe',
         parameters: {
           allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: ['MASTERCARD', 'VISA']
+          allowedCardNetworks: ['MASTERCARD', 'VISA', 'PHONEPAY']
         },
         tokenizationSpecification: {
           type: 'PAYMENT_GATEWAY',
           parameters: {
             'gateway': 'example',
-            'gatewayMerchantId': 'exampleGatewayMerchantId'
+            'gatewayMerchantId': '7070496842@upi'
           }
         }
       }],
       merchantInfo: {
         merchantName: "DSC Didi Study Center",
-        merchantId: '01234567890123456789'
+        merchantId: '7070496842@upi'
       },
       transactionInfo: {
         totalPriceStatus: 'FINAL',
-        totalPrice: '500.00',
+        totalPrice: '1000.00',
         currencyCode: 'INR'
       }
     };
